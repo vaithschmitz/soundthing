@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { LoopHandler } from './utils/Audiohelpers.js';
 import Drums from "./components/Drums.js";
 import Tone from 'tone';
 import {Chord, PcSet} from 'tonal';
@@ -9,27 +10,27 @@ class App extends Component {
    drums: [
       {
         id: 1, 
-        type: "Kick"
+        type: "Arp"
       },
       {
         id: 2, 
-        type: "Snare"
+        type: "A"
       },
       {
         id: 3, 
-        type: "Clap"
+        type: "B"
       },
       {
         id: 3, 
-        type: "HH"
+        type: "C"
       },
       {
         id: 4, 
-        type: "Ride"
+        type: "D"
       },
       {
         id: 4, 
-        type: "Play"
+        type: "E"
       }
     ]
   }
@@ -39,7 +40,9 @@ class App extends Component {
     synth.toMaster();
  
     const notes = [
-      Chord.notes("C3add9"), Chord.notes("D3m7"), Chord.notes("C3maj7")
+      // Chord.notes("C2add9"), Chord.notes("D2m7"), Chord.notes("C2maj7"),
+      Chord.notes("C3add9"), Chord.notes("D3m7"), Chord.notes('E3m7'), Chord.notes("C3maj7"),
+      // Chord.notes("C4add9"), Chord.notes("D4m7"), Chord.notes("C4maj7"),
     ]
     
     function loop(){
@@ -62,21 +65,18 @@ class App extends Component {
   }
     
     switch (type){
-      case 'Kick':
+      case 'Arp':
         loop();
         break;
-        case 'Snare':
+        case 'A':
         break;
-        case 'Clap':
+        case 'B':
         break;
-        case 'HH':
-        alert("HH")
+        case 'C':
         break;
-        case 'Ride':
-        alert("Ride")
+        case 'D':
         break;
-        case 'Play':
-        alert("Play")
+        case 'E':
         break;
 
 
