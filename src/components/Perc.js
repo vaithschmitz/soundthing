@@ -21,7 +21,7 @@ export class Perc extends Component {
   render() {
       const { id, type } = this.props.drum;
       return (
-    <div style={this.drumStyle()} onClick={this.props.hitDrum.bind
+    <div style={this.drumStyle()} onMouseEnter={this.props.hitDrum.bind
     (this, type)} >
     <h3>
         {this.props.drum.type} 
