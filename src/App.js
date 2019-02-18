@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Drums from "./components/Drums.js";
 import Tone from 'tone';
+import { black } from 'ansi-colors';
 
 
 class App extends Component {
@@ -33,14 +34,27 @@ class App extends Component {
       {
         id: 7, 
         type: "B"
-      }
+      },
+      {
+        id: 8, 
+        type: "C2"
+      },
+      // {
+      //   id: 9, 
+      //   type: "Reverb"
+      // },
+      // {
+      //   id: 10, 
+      //   type: "Delay"
+      // }
     ]
   }
  
   hitDrum = (type) =>{
-    let chr = new Tone.Chorus(4, 2.5, 0.5).toMaster();
+    // let chr = new Tone.Chorus(4, 2.5, 0.5).toMaster();
 
-    const synth = new Tone.PolySynth(6).connect(chr);
+    // const chrsynth = new Tone.PolySynth(6).connect(chr);
+    const synth = new Tone.PolySynth(6).toMaster();
 
     switch (type){
       case 'C':
@@ -66,9 +80,10 @@ class App extends Component {
         case 'B':
         synth.triggerAttackRelease("B3", '8n')
         break;
-
+        case 'C2':
+        synth.triggerAttackRelease("C4", '8n')
+        break;
     }
-
   }
 
 
