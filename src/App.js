@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Drums from "./components/Drums.js";
+import Header from "./components/layout/header.js"
 import Tone from 'tone';
-import { black } from 'ansi-colors';
-
 
 class App extends Component {
   state={
@@ -90,6 +89,7 @@ class App extends Component {
   render() {
     return ( 
       <div className="App">
+      <Header />
         <Drums drums={this.state.drums} hitDrum={this.hitDrum}/>
       </div>
     );
