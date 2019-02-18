@@ -9,56 +9,57 @@ class App extends Component {
    drums: [
       {
         id: 1, 
-        type: "Arp"
-      },
-      {
-        id: 2, 
-        type: "A"
-      },
-      {
-        id: 3, 
-        type: "B"
-      },
-      {
-        id: 3, 
         type: "C"
       },
       {
-        id: 4, 
+        id: 2, 
         type: "D"
       },
       {
-        id: 4, 
+        id: 3, 
         type: "E"
+      },
+      {
+        id: 4, 
+        type: "F"
+      },
+      {
+        id: 5, 
+        type: "G"
+      },
+      {
+        id: 6, 
+        type: "A"
       }
     ]
   }
  
   hitDrum = (type) =>{
+    let chr = new Tone.Chorus(4, 2.5, 0.5).toMaster();
 
-    const rev = new Tone.Reverb().toMaster();
-
-    const synth = new Tone.PolySynth(6).connect(rev);
+    const synth = new Tone.PolySynth(6).connect(chr);
 
     switch (type){
-      case 'Arp':
+      case 'C':
         synth.triggerAttackRelease("C3", '8n')
         break;
         default:
         break;
-        case 'A':
+        case 'D':
         synth.triggerAttackRelease("D3", '8n')
         break;
-        case 'B':
+        case 'E':
         synth.triggerAttackRelease("E3", '8n')
         break;
-        case 'C':
+        case 'F':
         synth.triggerAttackRelease("F3", '8n')
         break;
-        case 'D':
+        case 'G':
         synth.triggerAttackRelease("G3", '8n')
         break;
-        case 'E':
+        case 'A':
+        
+        synth.triggerAttackRelease("A3", '8n')
         break;
 
     }

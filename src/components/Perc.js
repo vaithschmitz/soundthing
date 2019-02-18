@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 export class Perc extends Component {
 
     drumStyle= ()=>{
+      
         return{
             // #394053 color scheme for elements left to right
             // #4E4A59
             // #6E6362
             // #839073
             // #7CAE7A
+            justifyContent: 'center',
             background: 'lightgrey',
             margin: '10px',
             padding: '10px',
@@ -21,7 +23,7 @@ export class Perc extends Component {
   render() {
       const { id, type } = this.props.drum;
       return (
-    <div style={this.drumStyle()} onMouseEnter={this.props.hitDrum.bind
+    <div style={this.drumStyle()} onClick={this.props.hitDrum.bind
     (this, type)} >
     <h3>
         {this.props.drum.type} 
