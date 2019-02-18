@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Drums from "./components/Drums.js";
 import Tone from 'tone';
-import {Chord} from 'tonal';
 
 
 class App extends Component {
@@ -30,6 +29,10 @@ class App extends Component {
       {
         id: 6, 
         type: "A"
+      },
+      {
+        id: 7, 
+        type: "B"
       }
     ]
   }
@@ -58,8 +61,10 @@ class App extends Component {
         synth.triggerAttackRelease("G3", '8n')
         break;
         case 'A':
-        
         synth.triggerAttackRelease("A3", '8n')
+        break;
+        case 'B':
+        synth.triggerAttackRelease("B3", '8n')
         break;
 
     }
@@ -68,8 +73,6 @@ class App extends Component {
 
 
   render() {
-    const cmaj7 = Chord.notes("CMaj7")
-    console.log(cmaj7)
     return ( 
       <div className="App">
         <Drums drums={this.state.drums} hitDrum={this.hitDrum}/>

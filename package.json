@@ -7,8 +7,6 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5",
-    "startaudiocontext": "^1.2.1",
-    "tonal": "^2.1.2",
     "tone": "^13.4.9"
   },
   "scripts": {
