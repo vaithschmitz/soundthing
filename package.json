@@ -1,7 +1,6 @@
 {
   "name": "soundthing",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "all": "^0.0.0",
     "react": "^16.8.1",
