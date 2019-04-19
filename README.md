@@ -1,4 +1,4 @@
-## Play C3 to C4
+
 
 A little thing in React to mess around with a few concepts. 
 Mainly:
@@ -7,7 +7,6 @@ Mainly:
   2. Playing around with the Tone.js library.
     - Setting buffers vs. preloading. 
     
-Play around with it here:
-https://soundthing-vaith.herokuapp.com/
+
 
 
