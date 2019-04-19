@@ -5,12 +5,3 @@
     grid-gap: 0.5em;
     background-color: black;
 }
-
-
-.pad {
-    width: 15vw;
-    background-color: purple;
-    color: white;
-    text-align: center;
-    border-radius: 10%;
-}

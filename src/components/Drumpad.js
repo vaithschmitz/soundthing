@@ -1,21 +1,11 @@
 import React, {Component} from 'react';
 import Tone from 'tone';
-import { grey } from 'ansi-colors';
 
 class Drumpad extends Component {
   constructor(props){
     super(props)
-    this.state = {isToggleOn: false,
-    }
 
-    this.handleClick = this.handleClick.bind(this);
     this.playSound = this.playSound.bind(this);
-  }
-
-  handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn,
-    }));;
   }
 
   playSound(){
@@ -25,9 +15,18 @@ class Drumpad extends Component {
 
   render() {
     return (
-      <div className="pad" onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-        {this.playSound()}
+      <div 
+        className="pad" 
+        onClick={(e) => {this.playSound()}}
+        style={{
+          backgroundColor: 'blue',
+          width: '15vw',
+          color: 'white',
+          textAlign: 'center',
+          borderRadius: '10%',
+        }}
+        >
+        CLICK
       </div>
     );
   }

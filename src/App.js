@@ -10,7 +10,6 @@ class App extends Component {
       pads.push(<Drumpad/>)
     }
 
-    console.log(<Drumpad/>)
     return ( 
       <div className="App"> 
         {pads}
