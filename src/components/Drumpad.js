@@ -26,8 +26,7 @@ class Drumpad extends Component {
   render() {
     return (
       <div className="pad" onClick={this.handleClick}>
-        {setInterval(this.state.isToggleOn ? 'ON' : 'OFF', 1000)}
-        {/* {this.state.isToggleOn ? 'ON' : 'OFF'} */}
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
         {this.playSound()}
       </div>
     );
