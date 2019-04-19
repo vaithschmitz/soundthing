@@ -9,8 +9,13 @@ class Drumpad extends Component {
   }
 
   playSound(props){
-    const synth = new Tone.Synth().toMaster();
-      synth.triggerAttackRelease(this.props.note, '8n')
+    const vib = new Tone.Vibrato().toMaster();
+    const pingPong = new Tone.PingPongDelay("6n", 0.3).toMaster();
+    const synth = new Tone.Synth([{
+      oscillator  : {
+      type  : 'sawtooth'
+      },}]).connect(pingPong).connect(vib);
+      synth.triggerAttackRelease(this.props.note, '4n')
   }
   
   render() {
