@@ -26,7 +26,6 @@ class Drumpad extends Component {
       <div
         className={this.state.isPlayed ? 'pad2' : 'pad'} 
         onClick={(e) => {this.playSound()}}>
-        <h1> {this.state.isPlayed ? this.props.note : ''} </h1>
       </div>
      
     );

@@ -1,18 +1,43 @@
 .pad{
-    background: lightblue;
+    background: radial-gradient(lightblue, white);
+    opacity: 0.5;
     width: 15vw;
     color: white;
     text-align: center;
     border-radius: 10%;
+    transition: all 0.1s;
+    animation: tap2 0.3s linear;
 }
 
 .pad2{
-    /* background: radial-gradient(lightblue, blue); */
-    /* background: lightblue; */
+    background: radial-gradient(lightblue, white);
+    opacity: 0.5;
     width: 15vw;
     color: white;
     text-align: center;
-    box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
     border-radius: 10%;
-    transition: all 2s;
+    animation: tap 0.3s linear;
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    opacity: 0.5;
+}
+
+@keyframes tap {
+    25% {
+        background: radial-gradient(lightblue, lightgrey )
+    }
+    75% {
+        background: radial-gradient(lightblue, white)}
+    100% {}
+}
+
+@keyframes tap2 {
+    25% {
+        background: radial-gradient(lightblue, lightgrey )
+    }
+    75% {
+        background: radial-gradient(lightblue, white)}
+    100% {}
 }
