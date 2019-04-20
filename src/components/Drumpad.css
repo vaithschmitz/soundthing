@@ -1,5 +1,6 @@
 .pad{
-    background-color: blue;
+    background: radial-gradient(lightblue, blue);
+    /* background-color: rgb(231, 231, 236); */
     width: 15vw;
     color: white;
     text-align: center;

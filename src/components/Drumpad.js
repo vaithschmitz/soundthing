@@ -10,12 +10,12 @@ class Drumpad extends Component {
 
   playSound(props){
     const vib = new Tone.Vibrato().toMaster();
-    const pingPong = new Tone.PingPongDelay("6n", 0.3).toMaster();
+    const trem = new Tone.Tremolo().toMaster();
     const synth = new Tone.Synth([{
       oscillator  : {
       type  : 'sawtooth'
-      },}]).connect(pingPong).connect(vib);
-      synth.triggerAttackRelease(this.props.note, '4n')
+      },}]).connect(vib).connect(trem);
+      synth.triggerAttackRelease(this.props.note, '2n')
   }
   
   render() {
@@ -23,7 +23,7 @@ class Drumpad extends Component {
       <div
         className='pad' 
         onClick={(e) => {this.playSound()}}>
-        <h1> {this.props.note} </h1>
+        {/* <h1> {this.props.note} </h1> */}
       </div>
      
     );

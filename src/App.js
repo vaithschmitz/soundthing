@@ -12,10 +12,11 @@ class App extends Component {
     }
 
     return ( 
-      <div className="App"> 
 
+      <div className="App"> 
         {pads}
       </div>
+      
     );
   }
   }
