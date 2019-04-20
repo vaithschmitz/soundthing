@@ -12,7 +12,7 @@ class Drumpad extends Component {
   }
 
   playSound(props){
-    const synth = new Tone.PluckSynth().toMaster();
+    const synth = new Tone.DuoSynth().toMaster();
       synth.triggerAttackRelease(this.props.note, '8n')
     this.setState({
       isPlayed : !this.state.isPlayed
