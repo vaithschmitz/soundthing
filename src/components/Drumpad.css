@@ -1,8 +1,18 @@
 .pad{
-    background: radial-gradient(lightblue, blue);
-    /* background-color: rgb(231, 231, 236); */
+    background: lightblue;
     width: 15vw;
     color: white;
     text-align: center;
     border-radius: 10%;
+}
+
+.pad2{
+    /* background: radial-gradient(lightblue, blue); */
+    /* background: lightblue; */
+    width: 15vw;
+    color: white;
+    text-align: center;
+    box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+    border-radius: 10%;
+    transition: all 2s;
 }

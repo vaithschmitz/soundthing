@@ -5,25 +5,28 @@ import './Drumpad.css'
 class Drumpad extends Component {
   constructor(props){
     super(props)
+    this.state = {
+      isPlayed: false
+    }
     this.playSound = this.playSound.bind(this);
   }
 
   playSound(props){
-    const vib = new Tone.Vibrato().toMaster();
-    const trem = new Tone.Tremolo().toMaster();
-    const synth = new Tone.Synth([{
-      oscillator  : {
-      type  : 'sawtooth'
-      },}]).connect(vib).connect(trem);
-      synth.triggerAttackRelease(this.props.note, '2n')
+    const synth = new Tone.PluckSynth().toMaster();
+      synth.triggerAttackRelease(this.props.note, '8n')
+    this.setState({
+      isPlayed : !this.state.isPlayed
+    })
   }
+
+
   
   render() {
     return (
       <div
-        className='pad' 
+        className={this.state.isPlayed ? 'pad2' : 'pad'} 
         onClick={(e) => {this.playSound()}}>
-        {/* <h1> {this.props.note} </h1> */}
+        <h1> {this.state.isPlayed ? this.props.note : ''} </h1>
       </div>
      
     );
