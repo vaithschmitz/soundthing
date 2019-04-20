@@ -1,12 +1,9 @@
+# Random Synth Built With Tone.js
+Ultimately will be a synth with a bunch of fancy functions and weird modes(read: braintwisting game stuff).
+
+Deployed here till I care enough to add it to my site:
 
 
-A little thing in React to mess around with a few concepts. 
-Mainly:
-  1. Learning about the WebAudio API. 
-    - How do contexts work? Using user interaction instead of browser flags. 
-  2. Playing around with the Tone.js library.
-    - Setting buffers vs. preloading. 
-    
-
+[CLICK ME](https://zealous-northcutt-6cd622.netlify.com/)
 
 
