@@ -24,6 +24,7 @@ h1 {
     opacity: 0.5;
 }
 
+
 @keyframes tap {
     25% {
         background: radial-gradient(lightblue, lightgrey )

@@ -12,8 +12,13 @@ class Drumpad extends Component {
   }
 
   playSound(props){
+    const dist = new Tone.Distortion().toMaster();
     const synth = new Tone.DuoSynth().toMaster();
-      synth.triggerAttackRelease(this.props.note, '8n')
+    if(this.props.isDist === true){
+      synth.connect(dist)
+    }
+ 
+    synth.triggerAttackRelease(this.props.note, '8n')
     this.setState({
       isPlayed : !this.state.isPlayed
     })
@@ -26,6 +31,7 @@ class Drumpad extends Component {
       <div
         className={this.state.isPlayed ? 'pad2' : 'pad'} 
         onClick={(e) => {this.playSound()}}>
+        <h1> {this.props.isDist}</h1>
       </div>
      
     );
