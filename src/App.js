@@ -14,6 +14,7 @@ class App extends Component {
     this.handleDist = this.handleDist.bind(this)
     this.handleRev = this.handleRev.bind(this)
     this.handleDelay = this.handleDelay.bind(this)
+    this.handleKeys = this.handleKeys.bind(this)
   }
 
   handleDist(){
@@ -34,16 +35,21 @@ class App extends Component {
     })
   }
 
+  handleKeys(e){
+    alert(e.key)
+  }
+
 
 
   render() {
 
     const pads = [];
     let notes = ['C2','D2','E2','F2','G2','A2','B2','C3','D3','E3','F3','G3','A3','B3','C4','D4'];
+    let keyboard = ['w','e','r','t','y','u','i','o','s','d','f','g','h','j','k','l'];
+    let keyboardCode = [87, 69, 82, 84, 89, 85, 73, 79, 83, 68, 70, 71, 72, 74, 75, 76]
     for(let i = 0; i< 16; i++){
-      pads.push(<Drumpad note = {notes[i]} key={notes[i]} isDist = {this.state.isDist} isRev = {this.state.isRev} isDelay = {this.state.isDelay}/>)
+      pads.push(<Drumpad note = {notes[i]} keyboard={keyboard[i]} key={notes[i]} isDist = {this.state.isDist} isRev = {this.state.isRev} isDelay = {this.state.isDelay}/>)
     }
-
 
 
     return ( 

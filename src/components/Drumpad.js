@@ -9,6 +9,7 @@ class Drumpad extends Component {
       isPlayed: false
     }
     this.playSound = this.playSound.bind(this);
+    this.handleKeys = this.handleKeys.bind(this)
   }
 
   playSound(props){
@@ -29,21 +30,25 @@ class Drumpad extends Component {
       synth.connect(rev)
     }
 
-
- 
     synth.triggerAttackRelease(this.props.note, '8n')
     this.setState({
       isPlayed : !this.state.isPlayed
     })
   }
 
+  handleKeys(props){
+    console.log(this.props.keyboard)
+
+  }
+
 
 
   render() {
     return (
-      <div
+      <div tabIndex={1}
         className={this.state.isPlayed ? 'pad2' : 'pad'} 
-        onClick={(e) => {this.playSound()}}>
+        onClick={(e) => {this.playSound(); this.handleKeys()}}
+        onKeyDown={(e) => {this.playSound(this.props.keyboard == e)}}>
       </div>
      
     );
