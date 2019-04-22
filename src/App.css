@@ -1,10 +1,40 @@
 .App {
     display: grid;
+    grid-template-columns: repeat(3, 33.3vw);
+    grid-template-rows: repeat(3, 33.3vh);
+    grid-gap: 0.5em;
+    background-color: black;
+}
+
+
+.Pads {
+    grid-row: 1 / span 3;
+    grid-column: 1 / span 2;
+    display: grid;
     grid-template-columns: repeat(4, 15vw);
     grid-template-rows: repeat(4, 15vh);
     grid-gap: 0.5em;
     background-color: black;
-    position: absolute;
-    left: 20%;
-    top: 20%;
+    position: relative;
+    left: 25%;
+    top: 5%;
+    z-index: 0.8;
+    /* top: 20%; */
+}
+
+.Control{
+    background-color: black;
+    grid-column: 2/3;
+    grid-row: 3/3;
+    align-items: center;
+    z-index: 1;
+}
+
+
+.btnon{
+    background-color: blue
+}
+
+.btnoff {
+    background-color: white;
 }

@@ -18,16 +18,17 @@ class Drumpad extends Component {
         delayTime: 0.5
     }).toMaster();
     const synth = new Tone.DuoSynth().toMaster();
-
+    
+    if(this.props.isDelay === true){
+      synth.connect(del)
+    }
     if(this.props.isDist === true){
       synth.connect(dist)
     }
     if(this.props.isRev === true){
       synth.connect(rev)
     }
-    if(this.props.isDelay === true){
-      synth.connect(del)
-    }
+
 
  
     synth.triggerAttackRelease(this.props.note, '8n')
@@ -37,15 +38,12 @@ class Drumpad extends Component {
   }
 
 
-  
+
   render() {
     return (
       <div
         className={this.state.isPlayed ? 'pad2' : 'pad'} 
         onClick={(e) => {this.playSound()}}>
-        <h2> {this.props.isDist ? 'Dist' : ""}</h2>
-        <h2> {this.props.isRev ? 'Rev' : ""}</h2>
-        <h2> {this.props.isDelay ? 'Delay' : ""}</h2>
       </div>
      
     );

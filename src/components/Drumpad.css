@@ -27,18 +27,21 @@ h1 {
 
 @keyframes tap {
     25% {
-        background: radial-gradient(lightblue, lightgrey )
+        background: radial-gradient(lightblue, lightgrey );
     }
     75% {
-        background: radial-gradient(lightblue, white)}
+        background: radial-gradient(lightblue, white);
+    }
+        
     100% {}
 }
 
 @keyframes tap2 {
     25% {
-        background: radial-gradient(lightblue, lightgrey )
+        background: radial-gradient(lightblue, lightgrey );
     }
     75% {
-        background: radial-gradient(lightblue, white)}
+        background: radial-gradient(lightblue, white);
+    }
     100% {}
 }
