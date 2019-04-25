@@ -1,3 +1,7 @@
+h3, h5{
+    color: white;
+    text-align: center
+}
 .App {
     display: grid;
     grid-template-columns: repeat(3, 33.3vw);
@@ -22,19 +26,30 @@
     /* top: 20%; */
 }
 
+.BtmRight{
+    background-color: black;
+    grid-column: 1/3;
+    grid-row: 3/3;
+    align-items: center;
+    z-index: 1;
+}
+
 .Control{
     background-color: black;
     grid-column: 2/3;
     grid-row: 3/3;
     align-items: center;
     z-index: 1;
+    
 }
 
 
 .btnon{
-    background-color: blue
+    background-color: blue;
+    color: white
 }
 
 .btnoff {
     background-color: white;
+    color: blue
 }
