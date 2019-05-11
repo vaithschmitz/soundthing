@@ -2,11 +2,10 @@ import React, {Component} from 'react';
 import './App.css';
 import Drumpad from './components/Drumpad.js';
 
-// import Panel from './components/Sidepanel.js'
-
 class App extends Component {
   constructor(props){
     super(props)
+
     this.state = {
       isDist: false,
       isRev: false,
@@ -55,7 +54,6 @@ class App extends Component {
     for(let i = 0; i< 16; i++){
       pads.push(<Drumpad 
         note = {notes[i]} 
-        keyPressed={this.state.keyPressed} 
         key={keyboard[i]}
         keyboard={keyboard[i]} 
         isDist = {this.state.isDist} 
@@ -79,6 +77,7 @@ class App extends Component {
           <h5>{this.state.isKeyboard ? 'Click On Any Pad Then Use Your Keyboard To Play' : ''}</h5>
 
         </div>
+
       </div>
     );
   }

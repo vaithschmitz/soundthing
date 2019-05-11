@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import Tone from 'tone';
 import './Drumpad.css'
+import { className } from 'postcss-selector-parser';
 
 class Drumpad extends Component {
   constructor(props){
     super(props)
     this.state = {
       isPlayed: false,
-      keyPressed: ''
     }
     this.state.notes = {
       w: 'C2', e : 'D2', r : 'E2', t: 'F2',
@@ -37,20 +37,18 @@ class Drumpad extends Component {
       synth.connect(rev)
     }
 
-    this.props.isKeyboard ? synth.triggerAttackRelease(this.state.notes[e], '8n') : synth.triggerAttackRelease(this.props.note, '8n')
-    this.setState({
-      isPlayed : !this.state.isPlayed
-    })
+    this.props.isKeyboard ? synth.triggerAttackRelease(this.state.notes[e], '8n') : 
+      synth.triggerAttackRelease(this.props.note, '8n');    
+      this.setState({
+        isPlayed : !this.state.isPlayed
+      })
   }
-
-  
-
 
 
   render() {
     return (
       <div tabIndex={1}
-        className={this.state.isPlayed ? 'pad2' : 'pad'} 
+        className = {this.props.isKeyboard ? 'pad' : (this.state.isPlayed ? 'pad2' : 'pad')} 
         onClick={(e) => {this.playSound()}}
         onKeyDown={(e) => {this.playSound(e.key)}}
         >
