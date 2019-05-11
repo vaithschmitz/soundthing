@@ -12,13 +12,15 @@
 }
 
 .pad2{
-    background: radial-gradient(lightblue, white);
+    background-color: transparent;
     opacity: 0.5;
     width: 15vw;
     color: white;
     text-align: center;
+    border: 2px solid yellow;
     border-radius: 10%;
-    animation: tap 0.3s linear;
+    transition: all 0.1s;
+    animation: tap2 0.3s linear;
 }
 
 h1 {

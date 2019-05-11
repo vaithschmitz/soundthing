@@ -10,12 +10,14 @@ class App extends Component {
     this.state = {
       isDist: false,
       isRev: false,
-      isDelay: false
+      isDelay: false, 
+      isKeyboard: false
     }
 
     this.handleDist = this.handleDist.bind(this)
     this.handleRev = this.handleRev.bind(this)
     this.handleDelay = this.handleDelay.bind(this)
+    this.handleControls = this.handleControls.bind(this)
 
   }
 
@@ -37,6 +39,11 @@ class App extends Component {
     })
   }
 
+  handleControls(){
+    this.setState({
+      isKeyboard: !this.state.isKeyboard,
+    })
+  }
 
 
 
@@ -54,7 +61,7 @@ class App extends Component {
         isDist = {this.state.isDist} 
         isRev = {this.state.isRev} 
         isDelay = {this.state.isDelay}
-        isKeyControl = {this.state.isKeyControl}
+        isKeyboard = {this.state.isKeyboard}
         />)
     }
 
@@ -68,7 +75,9 @@ class App extends Component {
           <div className= {this.state.isDist ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDist()}}>Distortion</div>
           <div className= {this.state.isRev ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleRev()}}>Reverb</div>
           <div className= {this.state.isDelay ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDelay()}}>Delay</div>
+          <div className= {this.state.isKeyboard ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleControls()}}>{this.state.isKeyboard ? 'Keyboard' : 'Click'}</div>
           <h5>Click On Any Pad Then Use Your Keyboard To Play</h5>
+
         </div>
       </div>
     );
