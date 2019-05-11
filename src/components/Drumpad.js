@@ -54,7 +54,7 @@ class Drumpad extends Component {
         onClick={(e) => {this.playSound()}}
         onKeyDown={(e) => {this.playSound(e.key)}}
         >
-      <h3>{this.props.keyboard}</h3>
+      <h3>{this.props.keyboard.toUpperCase()}</h3>
       </div>
      
     );

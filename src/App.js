@@ -76,7 +76,7 @@ class App extends Component {
           <div className= {this.state.isRev ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleRev()}}>Reverb</div>
           <div className= {this.state.isDelay ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDelay()}}>Delay</div>
           <div className= {this.state.isKeyboard ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleControls()}}>{this.state.isKeyboard ? 'Keyboard' : 'Click'}</div>
-          <h5>Click On Any Pad Then Use Your Keyboard To Play</h5>
+          <h5>{this.state.isKeyboard ? 'Click On Any Pad Then Use Your Keyboard To Play' : ''}</h5>
 
         </div>
       </div>

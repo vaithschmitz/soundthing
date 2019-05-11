@@ -22,13 +22,19 @@ h1 {
     opacity: 0.5;
 }
 
+h3{
+    color: yellow
+}
+
 
 @keyframes tap {
     25% {
         border: 2px solid yellow;
+        font-size: 200%;
     }
     75% {
         border: 2px solid yellow;
+        font-size: 200%;
     }
         
     100% {}
@@ -37,9 +43,11 @@ h1 {
 @keyframes tap2 {
     25% {
         border: 2px solid yellow;
+        font-size: 200%;
     }
     75% {
         border: 2px solid yellow;
+        font-size: 200%;
     }
     100% {}
 }
