@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
-import Drumpad from './components/Drumpad.js'
+import Drumpad from './components/Drumpad.js';
+
+// import Panel from './components/Sidepanel.js'
 
 class App extends Component {
   constructor(props){
@@ -37,6 +39,7 @@ class App extends Component {
 
 
 
+
   render() {
 
     const pads = [];
@@ -62,10 +65,9 @@ class App extends Component {
           {pads}
         </div>
         <div className = 'Control'>
-          <button className= {this.state.isDist ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDist()}}>Distortion</button>
-          <button className= {this.state.isRev ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleRev()}}>Reverb</button>
-          <button className= {this.state.isDelay ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDelay()}}>Delay</button>
-          <h3>I AM VERY BROKEN. COME BACK SOON.</h3>
+          <div className= {this.state.isDist ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDist()}}>Distortion</div>
+          <div className= {this.state.isRev ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleRev()}}>Reverb</div>
+          <div className= {this.state.isDelay ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDelay()}}>Delay</div>
           <h5>Click On Any Pad Then Use Your Keyboard To Play</h5>
         </div>
       </div>

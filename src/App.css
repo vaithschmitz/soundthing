@@ -6,7 +6,7 @@ h3, h5{
     display: grid;
     grid-template-columns: repeat(3, 33.3vw);
     grid-template-rows: repeat(3, 33.3vh);
-    grid-gap: 0.5em;
+    /* grid-gap: 0.5em; */
     background-color: black;
 }
 
@@ -20,7 +20,7 @@ h3, h5{
     grid-gap: 0.5em;
     background-color: black;
     position: relative;
-    left: 25%;
+    left: 27.5%;
     top: 5%;
     z-index: 0.8;
     /* top: 20%; */
@@ -40,16 +40,23 @@ h3, h5{
     grid-row: 3/3;
     align-items: center;
     z-index: 1;
+    margin-top: 2em;
     
 }
 
 
 .btnon{
-    background-color: blue;
-    color: white
+    text-align: center;
+    background-color: rgba(64, 64, 216, 0.548);
+    border: 2px solid white;
+    color: white;
+    margin: 1em;
 }
 
 .btnoff {
-    background-color: white;
-    color: blue
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    margin: 1em;
 }

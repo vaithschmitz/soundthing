@@ -1,0 +1,8 @@
+.Panel{
+    width: 25%vw;
+    height: 100%vh;
+    background-color: orange;
+    opacity: 0.8;
+    z-index: 2222;
+    color: white;
+}

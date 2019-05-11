@@ -1,9 +1,11 @@
 .pad{
-    background: radial-gradient(lightblue, white);
+    /* background: radial-gradient(lightblue, white); */
+    background-color: transparent;
     opacity: 0.5;
     width: 15vw;
     color: white;
     text-align: center;
+    border: 1px solid white;
     border-radius: 10%;
     transition: all 0.1s;
     animation: tap2 0.3s linear;
