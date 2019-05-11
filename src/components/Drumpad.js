@@ -37,8 +37,10 @@ class Drumpad extends Component {
       synth.connect(rev)
     }
 
-    this.props.isKeyboard ? synth.triggerAttackRelease(this.state.notes[e], '8n') : 
-      synth.triggerAttackRelease(this.props.note, '8n');    
+    
+
+    this.props.isKeyboard ? synth.triggerAttackRelease(this.state.notes[e], `${this.props.nlength}n`) : 
+      synth.triggerAttackRelease(this.props.note, `${this.props.nlength}n`);    
       this.setState({
         isPlayed : !this.state.isPlayed
       })

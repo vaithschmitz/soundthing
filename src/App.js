@@ -10,13 +10,15 @@ class App extends Component {
       isDist: false,
       isRev: false,
       isDelay: false, 
-      isKeyboard: false
+      isKeyboard: false, 
+      nlength: 4
     }
 
     this.handleDist = this.handleDist.bind(this)
     this.handleRev = this.handleRev.bind(this)
     this.handleDelay = this.handleDelay.bind(this)
     this.handleControls = this.handleControls.bind(this)
+    this.handleChange = this.handleChange.bind(this)
 
   }
 
@@ -44,6 +46,10 @@ class App extends Component {
     })
   }
 
+  handleChange(e, value){
+    this.setState({ nlength: e.target.value });
+    console.log(this.state.nlength)
+  };
 
 
   render() {
@@ -54,6 +60,7 @@ class App extends Component {
     for(let i = 0; i< 16; i++){
       pads.push(<Drumpad 
         note = {notes[i]} 
+        nlength = {this.state.nlength}
         key={keyboard[i]}
         keyboard={keyboard[i]} 
         isDist = {this.state.isDist} 
@@ -62,6 +69,7 @@ class App extends Component {
         isKeyboard = {this.state.isKeyboard}
         />)
     }
+
 
 
     return ( 
@@ -75,8 +83,21 @@ class App extends Component {
           <div className= {this.state.isDelay ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDelay()}}>Delay</div>
           <div className= {this.state.isKeyboard ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleControls()}}>{this.state.isKeyboard ? 'Keyboard' : 'Click'}</div>
           <h5>{this.state.isKeyboard ? 'Click On Any Pad Then Use Your Keyboard To Play' : ''}</h5>
-
         </div>
+
+      <div className = 'Mod'>
+        NoteLength: {this.state.nlength}
+        <input className= 'slider'
+          type= 'range' 
+          value={this.state.nlength}
+          min={1}
+          max={8}
+          step={1}
+          onChange={this.handleChange}
+        />
+      
+      </div> 
+
 
       </div>
     );
