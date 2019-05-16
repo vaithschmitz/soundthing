@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Tone from 'tone';
 import './Drumpad.css'
-import { className } from 'postcss-selector-parser';
 
 class Drumpad extends Component {
   constructor(props){

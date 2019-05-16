@@ -80,8 +80,8 @@ h3, h5{
     appearance: none;
     width: 50%;
     height: 25px;
-    background: white;
-    outline: none;
+    background: transparent;
+    outline: solid white;
   }
 
 
