@@ -86,7 +86,7 @@ class App extends Component {
         </div>
 
       <div className = 'Mod'>
-        NoteLength: {this.state.nlength}
+        Length: 1/{this.state.nlength}
         <input className= 'slider'
           type= 'range' 
           value={this.state.nlength}
