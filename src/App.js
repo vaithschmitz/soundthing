@@ -11,7 +11,9 @@ class App extends Component {
       isRev: false,
       isDelay: false, 
       isKeyboard: false, 
-      nlength: 4
+      nlength: 4,
+      delayLength: ''
+
     }
 
     this.handleDist = this.handleDist.bind(this)
@@ -47,29 +49,8 @@ class App extends Component {
   }
 
   handleChange(e, value){
-    this.setState({ nlength: e.target.value });
+    this.setState({ nlength: e.target.value});
   };
-
-
-
-  // playSound(e){
-  //   const dist = new Tone.Distortion();
-  //   const rev = new Tone.Freeverb();
-  //   const del = new Tone.FeedbackDelay({
-  //       delayTime: 0.5
-  //   }).toMaster();
-  //   const synth = new Tone.DuoSynth();
-    
-  //   synth.chain(this.props.isDist ? dist : '', this.props.isDelay ? del : '', this.props.isRev ? rev : '', Tone.Master)
-    
-
-  //   this.props.isKeyboard ? synth.triggerAttackRelease(this.state.notes[e], `${this.props.nlength}n`) : 
-  //     synth.triggerAttackRelease(this.props.note, `${this.props.nlength}n`);    
-  //     this.setState({
-  //       isPlayed : !this.state.isPlayed
-  //     })
-  // }
-
 
 
   render() {
@@ -115,9 +96,7 @@ class App extends Component {
           step={1}
           onChange={this.handleChange}
         />
-      
-      </div> 
-
+        <br/>
 
       </div>
     );
