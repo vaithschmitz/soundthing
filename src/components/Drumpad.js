@@ -19,23 +19,26 @@ class Drumpad extends Component {
 
 
   playSound(e){
-    const dist = new Tone.Distortion().toMaster();
-    const rev = new Tone.Freeverb().toMaster();
-    const del = new Tone.FeedbackDelay({
-        delayTime: 0.5
-    }).toMaster();
-    const synth = new Tone.DuoSynth().toMaster();
-    
-    if(this.props.isDelay === true){
-      synth.connect(del)
+    // init fx
+    const dist = new Tone.Distortion();
+    const rev = new Tone.Freeverb();
+    const del = new Tone.FeedbackDelay(0.5, 0.8);
+
+    // init synth
+    const synth = new Tone.DuoSynth();
+
+    // turn down wet if fx not in use
+    if(!this.props.isDist){
+      dist.wet.value = 0
     }
-    if(this.props.isDist === true){
-      synth.connect(dist)
+    if(!this.props.isDelay){
+      del.wet.value = 0
     }
-    if(this.props.isRev === true){
-      synth.connect(rev)
+    if(!this.props.isRev){
+      rev.wet.value = 0
     }
 
+    synth.chain(dist, del, rev, Tone.Master)
     
 
     this.props.isKeyboard ? synth.triggerAttackRelease(this.state.notes[e], `${this.props.nlength}n`) : 

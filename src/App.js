@@ -48,8 +48,28 @@ class App extends Component {
 
   handleChange(e, value){
     this.setState({ nlength: e.target.value });
-    console.log(this.state.nlength)
   };
+
+
+
+  // playSound(e){
+  //   const dist = new Tone.Distortion();
+  //   const rev = new Tone.Freeverb();
+  //   const del = new Tone.FeedbackDelay({
+  //       delayTime: 0.5
+  //   }).toMaster();
+  //   const synth = new Tone.DuoSynth();
+    
+  //   synth.chain(this.props.isDist ? dist : '', this.props.isDelay ? del : '', this.props.isRev ? rev : '', Tone.Master)
+    
+
+  //   this.props.isKeyboard ? synth.triggerAttackRelease(this.state.notes[e], `${this.props.nlength}n`) : 
+  //     synth.triggerAttackRelease(this.props.note, `${this.props.nlength}n`);    
+  //     this.setState({
+  //       isPlayed : !this.state.isPlayed
+  //     })
+  // }
+
 
 
   render() {
