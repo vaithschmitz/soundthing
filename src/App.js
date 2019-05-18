@@ -75,28 +75,32 @@ class App extends Component {
 
     return ( 
       <div className = 'App'>
+
         <div className="Pads"> 
           {pads}
         </div>
+
         <div className = 'Control'>
           <div className= {this.state.isDist ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDist()}}>Distortion</div>
           <div className= {this.state.isRev ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleRev()}}>Reverb</div>
           <div className= {this.state.isDelay ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleDelay()}}>Delay</div>
-          <div className= {this.state.isKeyboard ? 'btnon' : 'btnoff'}  onClick={(e) => {this.handleControls()}}>{this.state.isKeyboard ? 'Keyboard' : 'Click'}</div>
+          <div className= {this.state.isKeyboard ? 'btnon ctrlscheme' : 'btnoff ctrlscheme'}  onClick={(e) => {this.handleControls()}}>{this.state.isKeyboard ? 'Keyboard' : 'Click'}</div>
           <h5>{this.state.isKeyboard ? 'Click On Any Pad Then Use Your Keyboard To Play' : ''}</h5>
         </div>
 
-      <div className = 'Mod'>
-        Length: 1/{this.state.nlength}
-        <input className= 'slider'
-          type= 'range' 
-          value={this.state.nlength}
-          min={1}
-          max={8}
-          step={1}
-          onChange={this.handleChange}
-        />
-        <br/>
+        <div className = 'Mod'>
+          
+          <input className= 'slider'
+            type= 'range' 
+            value={this.state.nlength}
+            min={1}
+            max={8}
+            step={1}
+            onChange={this.handleChange}
+          />
+          Length: 1/{this.state.nlength}
+          <br/>
+        </div>
 
       </div>
     );
