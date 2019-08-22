@@ -4,6 +4,6 @@ Ultimately will be a synth with a bunch of fancy functions and weird modes (read
 Deployed here till I care enough to add it to my site:
 
 
-[CLICK ME](https://zealous-northcutt-6cd622.netlify.com/)
+[CLICK ME](https://wtsynth.netlify.com/)
 
 
