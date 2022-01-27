@@ -7,7 +7,7 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5",
-    "three": "^0.104.0",
+    "three": "^0.137.0",
     "tone": "^13.4.9"
   },
   "scripts": {
